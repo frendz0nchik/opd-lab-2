@@ -75,7 +75,7 @@ async def process_name(message: types.Message):
      
     await message.reply(text=kategori, reply_markup=kb)
 
-    # Добавляем состояние пользователя "ждем выбор врача"
+    
     await dp.current_state(user=message.from_user.id).set_state('wait_kategori')
 
 
@@ -89,7 +89,7 @@ async def process_kategoria(message: types.Message):
     kb2.add(types.KeyboardButton('Женский'))
     await message.reply(text=sex, reply_markup=kb2)
 
-    # Добавляем состояние пользователя "ждем дату приема"
+    
     await dp.current_state(user=message.from_user.id).set_state('wait_num')
     
 
